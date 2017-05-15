@@ -1,8 +1,8 @@
 # Windows Docker Container in Docker Toolbox for Windows
 This is a fork of https://github.com/StefanScherer/packer-windows
 
+If Hyper-V is not available, the work of StefanScherer is also a viable option for Docker Toolbox for Windows. 
 This Vagrant environment creates a Docker Machine to work with Windows containers with Windows Toolbox. 
-Since I work a lot with Virtualbox, Hyper V is not available in my PC. 
 You can easily switch between Docker for Linux containers and the Windows containers.
 
 Tested environments
