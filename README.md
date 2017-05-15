@@ -25,10 +25,10 @@ First you need the Windows Server 2016 VM for your hypervisor.
 Step 1 can be done with these steps:
 
 ```bash
-$ git clone https://github.com/StefanScherer/packer-windows
-$ cd packer-windows
-$ packer build --only=virtualbox-iso windows_2016_docker.json
-$ vagrant box add windows_2016_docker windows_2016_docker_virtualbox.box
+PS C:\ git clone https://github.com/StefanScherer/packer-windows
+PS C:\ cd packer-windows
+PS C:\ packer build --only=virtualbox-iso windows_2016_docker.json
+PS C:\ vagrant box add windows_2016_docker windows_2016_docker_virtualbox.box
 ```
 
 ## Working on Windows Toolbox
