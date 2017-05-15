@@ -6,13 +6,8 @@ Since I work a lot with Virtualbox, Hyper V is not available in my PC.
 You can easily switch between Docker for Linux containers and the Windows containers.
 
 Tested environments
-  * Windows Tools with Vagrant 1.9.2
-    * VMware Fusion Pro 8.5.3
-    * VirtualBox 5.1.12
-  * Windows with Vagrant 1.9.2
-    * VMware Workstation Pro 12.5.2
-    * VirtualBox see issue [#2](https://github.com/StefanScherer/windows-docker-machine/issues/2))
-   
+  * Windows Tools with Vagrant 1.9.4
+    * VirtualBox 5.1.22
 
 #### Before you begin
 
@@ -24,7 +19,7 @@ First you need the Windows Server 2016 VM for your hypervisor.
 
 Step 1 can be done with these steps:
 
-```bash
+```PowerShell as Administrator
 PS C:\ git clone https://github.com/StefanScherer/packer-windows
 PS C:\ cd packer-windows
 PS C:\ packer build --only=virtualbox-iso windows_2016_docker.json
@@ -33,23 +28,23 @@ PS C:\ vagrant box add windows_2016_docker windows_2016_docker_virtualbox.box
 
 ## Working on Windows Toolbox
 
-
 ### Create the Docker Machine
 
 Spin up the headless Vagrant box with Windows Server 2016 and Docker EE installed.
 It will create the TLS certs and create a `windows` Docker machine for your
 `docker-machine` binary on your Mac.
 
-```bash
-$ vagrant up --provider vmware_fusion
-$ vagrant up --provider virtualbox
+```PowerShell as Administrator
+PS C:\ git clone https://github.com/StefanScherer/windows-docker-machine
+PS C:\ cd windows-docker-machine
+PS C:\ vagrant up --provider virtualbox
 ```
-
+This will create a virtual machine in virtualbox called windows-docker-machine-default-XXXXXXXXX
 
 ### List your new Docker machine
 
-```bash
-$ docker-machine ls
+```PowerShell
+PS C:\ docker-machine ls
 NAME      ACTIVE   DRIVER         STATE     URL                          SWARM   DOCKER    ERRORS
 dev       -        virtualbox     Running   tcp://192.168.99.100:2376            v1.13.0   
 linux     -        vmwarefusion   Running                                        Unknown
@@ -60,21 +55,21 @@ Currently there is [an issue](https://github.com/docker/machine/issues/3943) tha
 
 ### Switch to Windows containers
 
-```bash
-$ eval $(docker-machine env windows)
+```Powershell
+PS C:\ docker-machine env windows | iex
 ```
 
-Now your Mac Docker client talks to the Windows Docker engine:
+Now your Docker client talks to the Windows Docker engine:
 
-```bash
-$ docker version
+```PowerShell
+PS C:\ docker version
 Client:
  Version:      17.03.0-ce
  API version:  1.26
  Go version:   go1.7.5
  Git commit:   60ccb22
  Built:        Thu Feb 23 10:40:59 2017
- OS/Arch:      darwin/amd64
+ OS/Arch:      windows/amd64
 
 Server:
  Version:      17.03.0-ee-1
