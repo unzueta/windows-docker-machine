@@ -1,24 +1,22 @@
 # Windows Docker Machine
 
-This Vagrant environment creates a Docker Machine to work on your MacBook
-with Windows containers. You can easily switch between Docker for Mac Linux containers and the Windows containers.
+This Vagrant environment creates a Docker Machine to work with Windows containers with Windows Toolbox
+Since I work a lot with Virtualbox, Hyper V is not available in my PC. 
+You can easily switch between Docker for Linux containers and the Windows containers.
 
-![Windows Docker Machine on macOS](images/windows_docker_machine.png)
 
 Tested environments
-  * macOS with Vagrant 1.9.2
+  * Windows Tools with Vagrant 1.9.2
     * VMware Fusion Pro 8.5.3
     * VirtualBox 5.1.12
   * Windows with Vagrant 1.9.2
     * VMware Workstation Pro 12.5.2
-    * (VirtualBox see issue [#2](https://github.com/StefanScherer/windows-docker-machine/issues/2))
-    * (Hyper-V see issue [#1](https://github.com/StefanScherer/windows-docker-machine/issues/1))
+    * VirtualBox see issue [#2](https://github.com/StefanScherer/windows-docker-machine/issues/2))
+   
 
 #### Before you begin
 
-First you need the Windows Server 2016 VM for your hypervisor. I prefer "Infrastructure as Code", so every build step is available on GitHub.
-
-![packer vagrant docker](images/packer_vagrant_docker.png)
+First you need the Windows Server 2016 VM for your hypervisor. 
 
 1. **packer build** to build a Vagrant base box, it's like a Docker image, but for Vagrant VM's
 2. **vagrant up** to create a running VM instance of Windows Server 2016
@@ -29,13 +27,12 @@ Step 1 can be done with these steps:
 ```bash
 $ git clone https://github.com/StefanScherer/packer-windows
 $ cd packer-windows
-$ packer build --only=vmware-iso windows_2016_docker.json
-$ vagrant box add windows_2016_docker windows_2016_docker_vmware.box
+$ packer build --only=virtualbox-iso windows_2016_docker.json
+$ vagrant box add windows_2016_docker windows_2016_docker_virtualbox.box
 ```
 
-## Working on macOS
+## Working on Windows Toolbox
 
-![docker on mac](images/docker-on-mac.gif)
 
 ### Create the Docker Machine
 
