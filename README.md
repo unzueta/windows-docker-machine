@@ -1,4 +1,5 @@
 # Windows Docker Machine
+This is a fork of https://github.com/StefanScherer/packer-windows
 
 This Vagrant environment creates a Docker Machine to work with Windows containers with Windows Toolbox. 
 Since I work a lot with Virtualbox, Hyper V is not available in my PC. 
