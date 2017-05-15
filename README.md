@@ -1,4 +1,4 @@
-# Windows Docker Container in Docker Toolbox for Windows
+# Windows Containers in Docker Toolbox for Windows
 This is a fork of https://github.com/StefanScherer/packer-windows
 
 If Hyper-V is not available, the work of StefanScherer is also a viable option for Docker Toolbox for Windows. 
