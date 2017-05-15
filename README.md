@@ -1,4 +1,4 @@
-# Windows Docker Machine in Windows Toolbox for Windows
+# Windows Docker Container in Docker Toolbox for Windows
 This is a fork of https://github.com/StefanScherer/packer-windows
 
 This Vagrant environment creates a Docker Machine to work with Windows containers with Windows Toolbox. 
