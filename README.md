@@ -1,9 +1,8 @@
 # Windows Docker Machine
 
-This Vagrant environment creates a Docker Machine to work with Windows containers with Windows Toolbox
+This Vagrant environment creates a Docker Machine to work with Windows containers with Windows Toolbox. 
 Since I work a lot with Virtualbox, Hyper V is not available in my PC. 
 You can easily switch between Docker for Linux containers and the Windows containers.
-
 
 Tested environments
   * Windows Tools with Vagrant 1.9.2
