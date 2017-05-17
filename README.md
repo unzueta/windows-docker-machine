@@ -108,10 +108,10 @@ Server:
 
 ### Mounting volumes from your Mac machine
 
-Use `$HOME` to map the user path.
+Use `C:\` to map local drive.
 
 ```Powershell
-PS C:\ docker run -it -v C:$HOME microsoft/windowsservercore powershell
+PS C:\ docker run -it -v "C:\:C:\drivec" microsoft/windowsservercore powershell
 ```
 
 This mounts the user directory through the Windows 2016 VM into the Windows Container.
