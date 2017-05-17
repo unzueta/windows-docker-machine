@@ -39,7 +39,7 @@ PS C:\ git clone https://github.com/StefanScherer/windows-docker-machine
 PS C:\ cd windows-docker-machine
 ```
 I you want to have an IP address from the same subnet as the Windows host, you can add a bridged network. to do so, edit the Vagrantfile
-add the following line after config.vm.network:
+add the following line after the line 'config.vm.network :private_network, ip: "192.168.99.90", gateway: "192.168.99.1"':
 ```
 config.vm.network "public_network", bridge: "<physical host interface>"
 ```
