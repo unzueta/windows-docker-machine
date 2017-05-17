@@ -59,7 +59,12 @@ NAME      ACTIVE   DRIVER       STATE     URL                         SWARM   DO
 default   -        virtualbox   Running   tcp://192.168.99.100:2376           v17.05.0-ce
 windows   -        generic      Running   tcp://192.168.99.90:2376            Unknown       Unable to query docker version: 400 Bad Request: client version 1.15 is too old. Minimum supported API version is 1.24, please upgrade your client to a newer version
 ```
+If you added a Bridged Network, you may have to correct the IPAddress line in the file config.json under c:\users\yourusername\.docker\machines\windows
 
+```
+ "IPAddress": "192.168.99.90 192.168.10.211",
+```
+ 
 Currently there is [an issue](https://github.com/docker/machine/issues/3943) that the client API version of `docker-machine` is too old. But switch Docker environments works as shown below.
 
 ### Switch to Windows containers
