@@ -64,6 +64,8 @@ If you added a Bridged Network, you may have to correct the IPAddress line in th
 ```
  "IPAddress": "192.168.99.90 192.168.10.211",
 ```
+to:
+ "IPAddress": "192.168.99.90",
  
 Currently there is [an issue](https://github.com/docker/machine/issues/3943) that the client API version of `docker-machine` is too old. But switch Docker environments works as shown below.
 
