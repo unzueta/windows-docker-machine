@@ -37,6 +37,16 @@ It will create the TLS certs and create a `windows` Docker machine for your
 ```PowerShell as Administrator
 PS C:\ git clone https://github.com/StefanScherer/windows-docker-machine
 PS C:\ cd windows-docker-machine
+```
+I you want to have an IP address from the same subnet as the Windows host, you can add a bridged network. to do so, edit the Vagrantfile
+add the following line after config.vm.network:
+```
+config.vm.network "public_network", bridge: "<physical host interface>"
+```
+The string identifying the desired interface must exactly match the name of an available interface.
+Save the file and run 
+
+```PowerShell as Administrator
 PS C:\ vagrant up --provider virtualbox
 ```
 This will create a virtual machine in virtualbox called windows-docker-machine-default-XXXXXXXXX
