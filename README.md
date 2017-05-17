@@ -99,7 +99,7 @@ Server:
 ### Switch back to Linux Containers
 
 ```Powershell
-PS C:\(docker-machine env default
+PS C:\docker-machine env default
 ```
 
 This will set DOCKER environment with Linux Containers.
