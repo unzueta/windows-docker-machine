@@ -110,6 +110,7 @@ Server:
 ### Switch back to Linux Containers
 
 ```Powershell
+PS C:\ docker-machine env windows | iex
 PS C:\docker-machine env default
 ```
 
