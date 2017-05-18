@@ -136,10 +136,10 @@ Server:
 
 ### Mounting volumes from your PC
 
-Use `D:\` to map local drive.
+`C:\d_drive` to map local drive.
 
 ```Powershell
-PS C:\ docker run -it -v "D:\:C:\drivec" microsoft/windowsservercore powershell
+PS C:\ docker run -it -v "C:\d_drive:C:\d_drive" microsoft/nanoserver powershell
 ```
 
 This mounts the user directory through the Windows 2016 VM into the Windows Container.
