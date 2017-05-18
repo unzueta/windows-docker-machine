@@ -35,7 +35,7 @@ It will create the TLS certs and create a `windows` Docker machine for your
 `docker-machine` binary on your PC. Remeber to run PowerShell as Administrator.
 
 ```PowerShell as Administrator
-PS C:\ git clone https://github.com/StefanScherer/windows-docker-machine
+PS C:\ git clone https://github.com//windows-docker-machine
 PS C:\ cd windows-docker-machine
 ```
 I you want to have an IP address from the same subnet as the Windows host, you can add a bridged network. to do so, edit the Vagrantfile
