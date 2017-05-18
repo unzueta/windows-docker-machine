@@ -30,7 +30,7 @@ PS C:\ vagrant box add windows_2016_docker windows_2016_docker_virtualbox.box
 
 ### Create the Docker Machine
 
-Spin up the headless Vagrant box with Windows Server 2016 and Docker EE installed.
+Spin up the headless Vagrant box with Windows Server 2016 and Docker CE installed.
 It will create the TLS certs and create a `windows` Docker machine for your
 `docker-machine` binary on your Mac.
 
@@ -44,6 +44,17 @@ add the following line after the line 'config.vm.network :private_network, ip: "
 config.vm.network "public_network", bridge: "<physical host interface>"
 ```
 The string identifying the desired interface must exactly match the name of an available interface.
+
+If you want to Display the VirtualBox GUI change the setting of v.gui to true
+ ```
+ config.vm.provider "virtualbox" do |v|
+    v.gui = true
+ ```
+If you want add additional shared folders, add the following line:
+```
+config.vm.synced_folder "D:\", "/d_drive", automount: true 
+```
+
 Save the file and run 
 
 ```PowerShell as Administrator
