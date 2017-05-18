@@ -11,6 +11,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.synced_folder ".", "/vagrant", disabled: true
   config.vm.synced_folder ENV['HOME'], ENV['HOME']
+  config.vm.synced_folder "D:\\", "/d_drive", automount: true
 
   config.vm.provision "shell", path: "scripts/create-machine.ps1", args: "-machineHome #{ENV['HOME']} -machineName windows"
   # config.vm.provision "shell", path: "scripts/set-experimental.ps1"
@@ -23,6 +24,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       opts.on("--provider PROVIDER", String, "") do |provider|
         if provider == 'virtualbox'
           config.vm.network :private_network, ip: "192.168.99.90", gateway: "192.168.99.1"
+          config.vm.network :public_network, bridge: "Realtek PCIe GBE Family Controller"
         end
       end
     end.parse!
@@ -40,7 +42,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
   config.vm.provider "virtualbox" do |v|
-    v.gui = false
+    v.gui = true
     v.memory = 2048
     v.cpus = 2
     v.linked_clone = true
