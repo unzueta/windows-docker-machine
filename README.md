@@ -32,7 +32,7 @@ PS C:\ vagrant box add windows_2016_docker windows_2016_docker_virtualbox.box
 
 Spin up the headless Vagrant box with Windows Server 2016 and Docker CE installed.
 It will create the TLS certs and create a `windows` Docker machine for your
-`docker-machine` binary on your PC. Remeber tu run PowerShell as Administrator.
+`docker-machine` binary on your PC. Remeber to run PowerShell as Administrator.
 
 ```PowerShell as Administrator
 PS C:\ git clone https://github.com/StefanScherer/windows-docker-machine
