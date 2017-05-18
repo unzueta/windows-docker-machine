@@ -50,9 +50,9 @@ If you want to Display the VirtualBox GUI change the setting of v.gui to true
  config.vm.provider "virtualbox" do |v|
     v.gui = true
  ```
-If you want add additional shared folders, add the following line:
+If you want add additional shared folders (i.e. D: drive), add the following line:
 ```
-config.vm.synced_folder "D:\", "/d_drive", automount: true 
+config.vm.synced_folder "D:\\", "/d_drive", automount: true 
 ```
 
 Save the file and run 
@@ -134,12 +134,12 @@ Server:
  OS/Arch:      linux/amd64
 ```
 
-### Mounting volumes from your Mac machine
+### Mounting volumes from your PC
 
-Use `C:\` to map local drive.
+Use `D:\` to map local drive.
 
 ```Powershell
-PS C:\ docker run -it -v "C:\:C:\drivec" microsoft/windowsservercore powershell
+PS C:\ docker run -it -v "D:\:C:\drivec" microsoft/windowsservercore powershell
 ```
 
 This mounts the user directory through the Windows 2016 VM into the Windows Container.
