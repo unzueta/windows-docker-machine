@@ -133,13 +133,25 @@ Server:
  Built:        Thu May  4 21:43:09 2017
  OS/Arch:      linux/amd64
 ```
+### Create a "transparent" Network
+The default network nat does not work properly. Create a nework based on the transparent driver
+```Powershell
+PS C:\ docker network create -d transparent trans
+```
+```
+PS C:\WINDOWS\system32> docker network ls
+NETWORK ID          NAME                DRIVER              SCOPE
+vd305ac64437        nat                 nat                 local
+d9bf03466fc6        none                null                local
+c995a65be5b2        trans               transparent         local
+```
 
 ### Mounting volumes from your PC
 
 `C:\d_drive` to map local drive.
 
 ```Powershell
-PS C:\ docker run -it -v "C:\d_drive:C:\d_drive" microsoft/nanoserver powershell
+PS C:\ docker run --network='trans' -it -v "C:\d_drive:C:\d_drive" microsoft/nanoserver powershell
 ```
 
 This mounts the user directory through the Windows 2016 VM into the Windows Container.
