@@ -110,7 +110,6 @@ Server:
 ### Switch back to Linux Containers
 
 ```Powershell
-PS C:\ docker-machine env windows | iex
 PS C:\docker-machine env default
 ```
 
@@ -137,6 +136,8 @@ Server:
 ### Create a "transparent" Network
 The default network nat does not work properly. Create a nework based on the transparent driver
 ```Powershell
+PS C:\ docker-machine env windows | iex
+
 PS C:\ docker network create -d transparent trans
 ```
 ```
