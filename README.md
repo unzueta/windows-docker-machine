@@ -6,7 +6,7 @@ This Vagrant environment creates a Docker Machine to work with Windows container
 You can easily switch between Docker for Linux containers and the Windows containers.
 
 Tested environments
-  * Windows Tools with Vagrant 1.9.4
+  * Windows with Docker Toolbox with Vagrant 1.9.4
     * VirtualBox 5.1.22
 
 #### Before you begin
