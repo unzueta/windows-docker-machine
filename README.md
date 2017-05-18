@@ -50,7 +50,7 @@ If you want to Display the VirtualBox GUI change the setting of v.gui to true
  config.vm.provider "virtualbox" do |v|
     v.gui = true
  ```
-If you want add additional shared folders (i.e. D: drive), add the following line:
+If you want add additional shared folders (i.e. D:\), add the following line:
 ```
 config.vm.synced_folder "D:\\", "/d_drive", automount: true 
 ```
