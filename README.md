@@ -43,6 +43,11 @@ add the following line after the line 'config.vm.network :private_network, ip: "
 ```
 config.vm.network "public_network", bridge: "<physical host interface>"
 ```
+Also, if you want the VM private network to be on your internal network, you have to set up in Virtualbox File/Preferences/Network/Host-Only Networks, the correct parameters.
+Also, adjust the IP parameters for your internal Network 
+```
+config.vm.network :private_network, ip: "192.168.10.7", gateway: "192.168.10.6"
+```
 The string identifying the desired interface must exactly match the name of an available interface.
 
 If you want to Display the VirtualBox GUI change the setting of v.gui to true
@@ -70,7 +75,7 @@ NAME      ACTIVE   DRIVER       STATE     URL                         SWARM   DO
 default   -        virtualbox   Running   tcp://192.168.99.100:2376           v17.05.0-ce
 windows   -        generic      Running   tcp://192.168.99.90:2376            Unknown       Unable to query docker version: 400 Bad Request: client version 1.15 is too old. Minimum supported API version is 1.24, please upgrade your client to a newer version
 ```
-If you added a Bridged Network, you may have to correct the IPAddress line in the file config.json under c:\users\yourusername\.docker\machines\windows
+If you added a Bridged Network, you may need to correct the IPAddress line in the file config.json under c:\users\yourusername\.docker\machines\windows
 
 ```
  "IPAddress": "192.168.99.90 192.168.10.211",
