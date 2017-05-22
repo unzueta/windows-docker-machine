@@ -30,6 +30,12 @@ docker run --rm `
   -v "C:\ProgramData\docker:C:\ProgramData\docker" `
   stefanscherer/dockertls-windows
 
+Write-host Server Name: $(hostname)
+Write-host Ips: $ips
+Write-host MachineHome: $machineHome
+Write-host MachineName: $machineName
+Write-host MachineIp: $machineIp
+
 Write-host Restarting Docker
 stop-service docker
 dockerd --unregister-service
