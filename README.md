@@ -46,7 +46,7 @@ config.vm.network "public_network", bridge: "<physical host interface>"
 Also, if you want the VM private network to be on your internal network, you have to set up in Virtualbox File/Preferences/Network/Host-Only Networks, the correct parameters.
 Also, adjust the IP parameters for your internal Network 
 ```
-config.vm.network :private_network, ip: "192.168.10.7", gateway: "192.168.10.6"
+config.vm.network :private_network, ip: "192.168.99.90", gateway: "192.168.90.1"
 ```
 The string identifying the desired interface must exactly match the name of an available interface.
 
