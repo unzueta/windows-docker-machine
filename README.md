@@ -50,7 +50,7 @@ config.vm.network :private_network, ip: "192.168.99.90", gateway: "192.168.90.1"
 ```
 The string identifying the desired interface must exactly match the name of an available interface.
 
-If you want to Display the VirtualBox GUI change the setting of v.gui to true
+If you want to Display the VirtualBox GUI for debugging change the setting of v.gui to true
  ```
  config.vm.provider "virtualbox" do |v|
     v.gui = true
