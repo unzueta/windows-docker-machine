@@ -143,7 +143,7 @@ The default network nat does not work properly. Create a nework based on the tra
 ```Powershell
 PS C:\ docker-machine env windows | iex
 
-PS C:\ docker network create -d transparent trans
+PS C:\ docker network create -d transparent -o com.docker.network.windowsshim.interface="Ethernet 2" trans2 --subnet=192.168.99.0/24 --gateway=192.168.99.1
 ```
 ```
 PS C:\WINDOWS\system32> docker network ls
@@ -158,7 +158,7 @@ c995a65be5b2        trans               transparent         local
 `C:\d_drive` to map local drive.
 
 ```Powershell
-PS C:\ docker run --network='trans' -it -v "C:\d_drive:C:\d_drive" microsoft/nanoserver powershell
+PS C:\ docker run --network=trans2 -it -v "C:\d_drive:C:\d_drive" microsoft/nanoserver powershell
 ```
 
 This mounts the user directory through the Windows 2016 VM into the Windows Container.
