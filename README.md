@@ -159,7 +159,7 @@ c995a65be5b2        trans               transparent         local
 `C:\d_drive` to map local drive.
 
 ```Powershell
-PS C:\ docker run --network=trans2 -it -v "C:\d_drive:C:\d_drive" microsoft/nanoserver powershell
+PS C:\ docker run --network=trans2 -it -v "C:\d_drive:C:\d_drive" --ip=192.168.99.100 --name nanoserver microsoft/nanoserver powershell
 ```
 
 This mounts the user directory through the Windows 2016 VM into the Windows Container.
