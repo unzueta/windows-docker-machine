@@ -146,7 +146,7 @@ PS C:\ docker-machine env windows | iex
 
 PS C:\ docker network create -d transparent -o com.docker.network.windowsshim.interface="Ethernet 3" trans2
 ```
-If DCHP is not enabled, you should add a subnet and gateway
+If DHCP is not enabled, you should add a subnet and gateway
 ```
 PS C:\ docker network create -d transparent -o com.docker.network.windowsshim.interface="Ethernet 2" trans2 --subnet=192.168.99.0/24 --gateway=192.168.99.1
 ```
