@@ -47,7 +47,7 @@ Also, if you want the VM private network to be on your internal network, you hav
 Also, adjust the IP parameters for your internal Network.
 Also, set the network interfaces Promiscous Mode to "Allow all".
 ```
-config.vm.network :private_network, ip: "192.168.99.90", gateway: "192.168.90.1"
+config.vm.network :private_network, ip: "192.168.99.90"
 ```
 The string identifying the desired interface must exactly match the name of an available interface.
 
