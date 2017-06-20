@@ -165,6 +165,10 @@ c995a65be5b2        trans               transparent         local
 ```Powershell
 PS C:\ docker run --network=trans2 -it -v "C:\d_drive:C:\d_drive" --ip=192.168.99.100 --name nanoserver microsoft/nanoserver powershell
 ```
+In a Linux docker machine the command syntax would be:
+``` Powershell
+PS C:\ docker run -itd -P --network host -v /d/:/srv/data/ --name sambafs jenserat/samba-publicshare
+``` Powershell
 
 This mounts the user directory through the Windows 2016 VM into the Windows Container.
 
