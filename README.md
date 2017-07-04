@@ -148,14 +148,14 @@ PS C:\ docker network create -d transparent -o com.docker.network.windowsshim.in
 ```
 If DHCP is not enabled, you should add a subnet and gateway
 ```
-PS C:\ docker network create -d transparent -o com.docker.network.windowsshim.interface="Ethernet 2" trans2 --subnet=192.168.99.0/24 --gateway=192.168.99.1
+PS C:\ docker network create -d transparent -o com.docker.network.windowsshim.interface="Ethernet 3" trans2 --subnet=192.168.10.0/24 --gateway=192.168.10.1
 ```
 ```
 PS C:\WINDOWS\system32> docker network ls
 NETWORK ID          NAME                DRIVER              SCOPE
 vd305ac64437        nat                 nat                 local
 d9bf03466fc6        none                null                local
-c995a65be5b2        trans               transparent         local
+c995a65be5b2        trans2              transparent         local
 ```
 
 ### Mounting volumes from your PC
@@ -173,6 +173,12 @@ PS C:\ docker run -itd -P --network host -v /d/:/srv/data/ --name sambafs jenser
 This mounts the user directory through the Windows 2016 VM into the Windows Container.
 
 ## Further commands
+``` Powershell
+PS C:\ docker run --name aspnet --network=trans2 -itd -v "C:\d_drive:C:\d_drive" microsoft/aspnet
+PS C:\ docker exec -it aspnet cmd
+PS C:\ docker stop aspnet
+PS C:\ docker container rm aspnet
+```
 
 Here is a list of `docker-machine` commands and the equivalent Vagrant command.
 
